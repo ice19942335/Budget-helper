@@ -1,0 +1,134 @@
+﻿<Window x:Class="YourBudget.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YourBudget"
+        mc:Ignorable="d"
+        Title="Your Budget Planer" Height="700" Width="1395" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid OpacityMask="Black" HorizontalAlignment="Right" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="641"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="460"/>
+            <ColumnDefinition Width="460"/>
+            <ColumnDefinition Width="460"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnIncomeAdd" Content="Add" HorizontalAlignment="Left" Margin="347,14,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" Height="23" Click="btnIncomeAdd_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnIncomeDelete" Content="Delete selected" HorizontalAlignment="Left" Margin="347,70,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" Height="23" Click="btnIncomeDelete_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnIncomeRefreshFields" Content="Refresh fields" HorizontalAlignment="Left" Margin="347,42,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" Height="23" Click="btnIncomeRefreshFields_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="tbIncomePrice" HorizontalAlignment="Left" Height="23" Margin="137,40,0,0" TextWrapping="Wrap" Text="0,0" VerticalAlignment="Top" Width="120" Grid.Row="1" />
+        <TextBox x:Name="tbIncomeName" HorizontalAlignment="Left" Height="23" Margin="137,14,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" Grid.Row="1"  />
+        <Label Content="Incomes" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15" HorizontalAlignment="Right" Width="460">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="Outcomes" Grid.Column="1" Width="460" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="Results" VerticalAlignment="Top" Grid.Column="2" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Rectangle Grid.Column="2" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="672" Margin="0,0,0,-1" Stroke="Black" VerticalAlignment="Top" Width="1" Grid.RowSpan="2"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="672" Margin="459,0,0,-1" Stroke="Black" VerticalAlignment="Top" Width="1" Grid.RowSpan="2"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="672" Margin="0,0,0,-1" Stroke="Black" VerticalAlignment="Top" Width="1" Grid.RowSpan="2" Grid.Column="1"/>
+        <Rectangle Grid.Column="1" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="672" Margin="459,0,0,-1" Stroke="Black" VerticalAlignment="Top" Width="1" Grid.RowSpan="2"/>
+        <Label x:Name="lblIncomePrice" Content="Price £:" Margin="10,0,0,579" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="48"/>
+        <Label x:Name="lblIncomeName" Content="Income name" Margin="10,10,0,605" Grid.Row="1" HorizontalAlignment="Left" Width="82"/>
+        <ListBox x:Name="listBoxIncomeList" Margin="10,152,0,20" Grid.Row="1" SelectionChanged="listBoxIncomeList_SelectionChanged" HorizontalAlignment="Left" Width="440" />
+        <Label x:Name="lblIncomeList" Content="Incomes list:" Margin="10,0,0,494" Grid.Row="1" FontWeight="Bold" HorizontalAlignment="Left" Width="80" Height="26" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnOutcomeAdd" Content="Add" HorizontalAlignment="Left" Margin="347,14,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" Height="23" Grid.Column="1" Click="btnOutcomeAdd_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnOutcomeDelete" Content="Delete selected" HorizontalAlignment="Left" Margin="347,70,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" Height="23" Grid.Column="1" Click="btnOutcomeDelete_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnOutcomeRefreshFields" Content="Refresh fields" HorizontalAlignment="Left" Margin="347,42,0,0" VerticalAlignment="Top" Width="100" Grid.Row="1" Height="23" Grid.Column="1" Click="btnOutcomeRefreshFields_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <CheckBox x:Name="tickBoxIsDirectDebit" Content="Is Direct debit" HorizontalAlignment="Left" Margin="14,70,0,0" VerticalAlignment="Top" Grid.Row="1" Height="15" Width="99" Grid.Column="1"/>
+        <TextBox x:Name="tbOutcomePrice" HorizontalAlignment="Left" Height="23" Margin="137,40,0,0" TextWrapping="Wrap" Text="0,0" VerticalAlignment="Top" Width="120" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="tbOutcomeName" HorizontalAlignment="Left" Height="23" Margin="137,14,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120" Grid.Row="1" Grid.Column="1"/>
+        <Label x:Name="lblOutcomePrice" Content="Price £:" HorizontalAlignment="Left" Margin="10,36,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lblOutcomeName" Content="Outcome name" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox x:Name="tbOutcomeDate" HorizontalAlignment="Left" Height="23" Margin="137,68,0,0" TextWrapping="Wrap" Text="day" VerticalAlignment="Top" Width="35" Grid.Row="1" Grid.Column="1"/>
+        <ListBox x:Name="listBoxOutcomeList" Margin="10,152,10,20" Grid.Row="1" Grid.Column="1" SelectionChanged="listBoxOutcomeList_SelectionChanged"/>
+        <Label x:Name="lblOutcomeList" Content="Outcomes list:" HorizontalAlignment="Left" Margin="10,121,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="1"/>
+        <Calendar x:Name="Calendar" Grid.Column="2" Margin="271,5,10,0" Grid.Row="1" VerticalAlignment="Top" Height="166" SelectionMode="MultipleRange" BorderBrush="Black" SelectedDatesChanged="Calendar_SelectedDatesChanged" >
+            <Calendar.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE4EAF0" Offset="0"/>
+                    <GradientStop Color="#FFECF0F4" Offset="0.16"/>
+                    <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
+                    <GradientStop Color="#FFA2A2A2" Offset="1"/>
+                </LinearGradientBrush>
+            </Calendar.Background>
+        </Calendar>
+        <Label x:Name="lblDirectDebitTotal" Content="Direct debits total:" Grid.Column="2" HorizontalAlignment="Left" Margin="11,152,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lblSumOfAllDirectDebits" Content="Sum of all direct debits £:" Grid.Column="2" HorizontalAlignment="Left" Margin="11,183,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lblSumOfAllOutcomes" Content="Sum of all outcomes £:" Grid.Column="2" HorizontalAlignment="Left" Margin="11,353,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lblIncomesTotal" Content="Incomes total:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lblSumOfAllIncomes" Content="Sum of all incomes £:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,72,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lblIncomeInfo" Content="Incomes info" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblOutcomesInfo" Content="Outcomes info" Grid.Column="2" HorizontalAlignment="Left" Margin="11,260,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.516,-0.423"/>
+        <Label x:Name="lblDirectDebitInfo" Content="Direct debits info" Grid.Column="2" HorizontalAlignment="Left" Margin="10,121,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblMoneyLeft" Content="Money left £:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,591,0,20" Grid.Row="1" FontWeight="Bold" RenderTransformOrigin="0.516,-0.423" Foreground="White" Background="Black"/>
+        <Label x:Name="lblOutcomesTotal" Content="Outcomes total:" Grid.Column="2" HorizontalAlignment="Left" Margin="11,291,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lblTotal" Content="TOTAL:" Grid.Column="2" HorizontalAlignment="Left" Margin="11,407,0,0" Grid.Row="1" VerticalAlignment="Top" FontWeight="Bold" RenderTransformOrigin="0.516,-0.423"/>
+        <Label x:Name="lblToPayTotal" Content="To pay total £:" Grid.Column="2" HorizontalAlignment="Left" Margin="11,438,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label x:Name="lblSumOfAllOutcomesNotDirectDebits" Content="Sum of all outcomes NOT direct debits £:" Grid.Column="2" HorizontalAlignment="Left" Margin="11,322,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ArrayOfOutcome xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Outcome>
+    <Price>171</Price>
+    <Name>Rent</Name>
+    <IsDirectDebit>true</IsDirectDebit>
+    <Day>21</Day>
+  </Outcome>
+  <Outcome>
+    <Price>53</Price>
+    <Name>Laptop Direct Debit</Name>
+    <IsDirectDebit>true</IsDirectDebit>
+    <Day>21</Day>
+  </Outcome>
+  <Outcome>
+    <Price>80</Price>
+    <Name>Phone</Name>
+    <IsDirectDebit>true</IsDirectDebit>
+    <Day>21</Day>
+  </Outcome>
+  <Outcome>
+    <Price>80</Price>
+    <Name>HeadPhones</Name>
+    <IsDirectDebit>false</IsDirectDebit>
+    <Day>0</Day>
+  </Outcome>
+  <Outcome>
+    <Price>400</Price>
+    <Name>Food and cigarets</Name>
+    <IsDirectDebit>false</IsDirectDebit>
+    <Day>0</Day>
+  </Outcome>
+</ArrayOfOutcome>
